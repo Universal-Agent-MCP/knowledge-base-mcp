@@ -1,0 +1,97 @@
+# generated: 2025-12-15
+# project: knowledge-base
+# tracking_system: file-system
+# story_location: docs/sprint-artifacts
+
+# STATUS DEFINITIONS:
+# ==================
+# Epic Status:
+#   - backlog: Epic not yet started
+#   - in-progress: Epic actively being worked on
+#   - done: All stories in epic completed
+#
+# Epic Status Transitions:
+#   - backlog → in-progress: Automatically when first story is created (via create-story)
+#   - in-progress → done: Manually when all stories reach 'done' status
+#
+# Story Status:
+#   - backlog: Story only exists in epic file
+#   - drafted: Story file created in stories folder
+#   - ready-for-dev: Draft approved and story context created
+#   - in-progress: Developer actively working on implementation
+#   - review: Ready for code review (via Dev's code-review workflow)
+#   - done: Story completed
+#
+# Retrospective Status:
+#   - optional: Can be completed but not required
+#   - completed: Retrospective has been done
+#
+# WORKFLOW NOTES:
+# ===============
+# - Epic transitions to 'in-progress' automatically when first story is created
+# - Stories can be worked in parallel if team capacity allows
+# - SM typically drafts next story after previous one is 'done' to incorporate learnings
+# - Dev moves story to 'review', then runs code-review (fresh context, different LLM recommended)
+
+generated: 2025-12-15
+project: knowledge-base
+tracking_system: file-system
+story_location: docs/sprint-artifacts
+
+development_status:
+  # Epic 1: Project Foundation & Neo4j Integration
+  epic-1: in-progress
+  1-1-initialize-python-project-with-mcp-server-skeleton: ready-for-dev
+  1-2-configure-environment-variables-for-neo4j-connection: ready-for-dev
+  1-3-deploy-neo4j-schema-with-constraints-and-vector-indexes: ready-for-dev
+  1-4-implement-neo4j-client-with-connection-pooling: ready-for-dev
+  1-5-create-basic-mcp-server-with-ping-tool: ready-for-dev
+  1-6-setup-development-quality-tools: ready-for-dev
+  epic-1-retrospective: optional
+
+  # Epic 2: Source Code Indexing
+  epic-2: backlog
+  2-1-import-nx-project-graph-into-neo4j: backlog
+  2-2-parse-angular-decorators-and-create-entity-nodes: backlog
+  2-3-implement-file-path-and-glob-pattern-selection: backlog
+  2-4-filter-indexing-by-nx-library-scope: backlog
+  2-5-generate-vector-embeddings-for-code-chunks: backlog
+  2-6-create-cocoindex-etl-pipeline-for-source-code: backlog
+  epic-2-retrospective: optional
+
+  # Epic 3: Documentation Indexing
+  epic-3: backlog
+  3-1-index-markdown-specification-documents: backlog
+  3-2-extract-feature-descriptions-from-markdown: backlog
+  3-3-generate-embeddings-for-document-content: backlog
+  3-4-create-documentation-to-code-relationships: backlog
+  epic-3-retrospective: optional
+
+  # Epic 4: Feature Context & Semantic Search
+  epic-4: backlog
+  4-1-implement-query-feature-context-mcp-tool: backlog
+  4-2-return-related-code-entities-in-context: backlog
+  4-3-include-linked-documentation-in-responses: backlog
+  4-4-support-relationship-traversal-depth-parameter: backlog
+  4-5-implement-search-similar-features-mcp-tool: backlog
+  4-6-return-ranked-results-with-scores-and-limits: backlog
+  epic-4-retrospective: optional
+
+  # Epic 5: Impact Analysis & Dependencies
+  epic-5: backlog
+  5-1-implement-analyze-feature-impact-mcp-tool: backlog
+  5-2-traverse-dependency-graph-for-impact: backlog
+  5-3-filter-impact-analysis-by-library-scope: backlog
+  5-4-show-affected-exports-and-relationship-distances: backlog
+  5-5-implement-get-feature-dependencies-mcp-tool: backlog
+  5-6-return-dependency-graph-structure-for-visualization: backlog
+  epic-5-retrospective: optional
+
+  # Epic 6: Production Integration & Documentation
+  epic-6: backlog
+  6-1-implement-structured-json-response-format: backlog
+  6-2-enable-automatic-context-injection-for-ai-agents: backlog
+  6-3-create-vs-code-mcp-configuration: backlog
+  6-4-write-quick-start-documentation: backlog
+  6-5-write-mcp-tools-api-reference: backlog
+  epic-6-retrospective: optional
