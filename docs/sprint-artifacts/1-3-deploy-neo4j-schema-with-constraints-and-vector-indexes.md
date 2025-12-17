@@ -1,3 +1,9 @@
+---
+beads_id: knowledge-base-4uf
+beads_parent: knowledge-base-u9s
+last_synced: 2025-12-18T00:36:00+07:00
+---
+
 # Story 1.3: Deploy Neo4j Schema with Constraints and Vector Indexes
 
 Status: ready-for-dev
@@ -94,7 +100,7 @@ CYPHER_DIR = Path(__file__).parent / "cypher"
 def deploy_schema() -> None:
     """Deploy all Cypher schema scripts in order."""
     settings = get_settings()
-    
+
     try:
         driver = GraphDatabase.driver(
             settings.neo4j_uri,
@@ -103,22 +109,22 @@ def deploy_schema() -> None:
         driver.verify_connectivity()
     except Exception as e:
         raise ConnectionError(f"Failed to connect to Neo4j: {e}")
-    
+
     try:
         with driver.session(database=settings.neo4j_database) as session:
             # Execute Cypher scripts in order
             for cypher_file in sorted(CYPHER_DIR.glob("*.cypher")):
                 logger.info(f"Executing: {cypher_file.name}")
                 cypher = cypher_file.read_text()
-                
+
                 for statement in cypher.split(";"):
                     statement = statement.strip()
                     if statement and not statement.startswith("--"):
                         session.run(statement)
                         logger.debug(f"Executed: {statement[:50]}...")
-                
+
                 logger.info(f"Completed: {cypher_file.name}")
-            
+
             # Verify schema
             verify_schema(session)
     finally:
@@ -128,9 +134,9 @@ def verify_schema(session) -> None:
     """Verify constraints and indexes exist."""
     constraints = session.run("SHOW CONSTRAINTS").data()
     indexes = session.run("SHOW INDEXES WHERE type = 'VECTOR'").data()
-    
+
     logger.info(f"Schema deployed: {len(constraints)} constraints, {len(indexes)} vector indexes")
-    
+
     for c in constraints:
         logger.debug(f"  Constraint: {c.get('name')}")
     for i in indexes:

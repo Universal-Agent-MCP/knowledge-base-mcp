@@ -1,3 +1,9 @@
+---
+beads_id: knowledge-base-lrf
+beads_parent: knowledge-base-u9s
+last_synced: 2025-12-18T00:36:00+07:00
+---
+
 # Story 1.6: Setup Development Quality Tools
 
 Status: ready-for-dev
@@ -208,7 +214,7 @@ from src.mcp.tools.ping import ping
 def test_ping_returns_ok_status():
     """Test ping tool returns expected response."""
     result = ping()
-    
+
     assert result["status"] == "ok"
     assert "knowledge-base" in result["message"]
     assert "running" in result["message"]

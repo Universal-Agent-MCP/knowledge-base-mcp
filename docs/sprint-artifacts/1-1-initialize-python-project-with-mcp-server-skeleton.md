@@ -1,3 +1,9 @@
+---
+beads_id: knowledge-base-qip
+beads_parent: knowledge-base-u9s
+last_synced: 2025-12-18T00:35:00+07:00
+---
+
 # Story 1.1: Initialize Python Project with MCP Server Skeleton
 
 Status: ready-for-dev

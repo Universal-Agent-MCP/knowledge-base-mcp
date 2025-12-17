@@ -1,3 +1,9 @@
+---
+beads_id: knowledge-base-chm
+beads_parent: knowledge-base-u9s
+last_synced: 2025-12-18T00:36:00+07:00
+---
+
 # Story 1.2: Configure Environment Variables for Neo4j Connection
 
 Status: ready-for-dev
@@ -101,15 +107,15 @@ class Settings:
 def get_settings() -> Settings:
     """Load and cache application settings."""
     load_dotenv()
-    
+
     required_vars = ["NEO4J_URI", "NEO4J_USER", "NEO4J_PASSWORD"]
     missing = [var for var in required_vars if not os.getenv(var)]
-    
+
     if missing:
         raise ConfigurationError(
             f"Missing required environment variables: {', '.join(missing)}"
         )
-    
+
     return Settings(
         neo4j_uri=os.getenv("NEO4J_URI", ""),
         neo4j_user=os.getenv("NEO4J_USER", ""),

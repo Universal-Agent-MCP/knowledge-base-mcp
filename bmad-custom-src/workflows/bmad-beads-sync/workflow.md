@@ -48,7 +48,7 @@ This uses **step-file architecture** with a **menu-driven main loop**:
 
 ### 1. Configuration Loading
 
-Load config from `{project-root}/.bmad/bmb/config.yaml` and resolve:
+Load config from `{project-root}/_bmad/bmb/config.yaml` and resolve:
 
 - `project_name`, `output_folder`, `user_name`, `communication_language`
 

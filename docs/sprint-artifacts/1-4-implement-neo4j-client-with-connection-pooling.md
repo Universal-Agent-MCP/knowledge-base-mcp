@@ -1,3 +1,9 @@
+---
+beads_id: knowledge-base-1ju
+beads_parent: knowledge-base-u9s
+last_synced: 2025-12-18T00:36:00+07:00
+---
+
 # Story 1.4: Implement Neo4j Client with Connection Pooling
 
 Status: ready-for-dev
@@ -71,7 +77,7 @@ class Neo4jClient:
         """Initialize Neo4j connection with connection pooling."""
         self._uri = uri
         self._database = database
-        
+
         try:
             self._driver = GraphDatabase.driver(uri, auth=(user, password))
             self._async_driver = AsyncGraphDatabase.driver(uri, auth=(user, password))
@@ -162,7 +168,7 @@ The Neo4j Python driver has built-in connection pooling with these defaults:
 For custom configuration:
 ```python
 self._driver = GraphDatabase.driver(
-    uri, 
+    uri,
     auth=(user, password),
     max_connection_lifetime=3600,
     max_connection_pool_size=50,

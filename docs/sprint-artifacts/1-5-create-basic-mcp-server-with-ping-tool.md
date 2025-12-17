@@ -1,3 +1,9 @@
+---
+beads_id: knowledge-base-mgt
+beads_parent: knowledge-base-u9s
+last_synced: 2025-12-18T00:36:00+07:00
+---
+
 # Story 1.5: Create Basic MCP Server with Ping Tool
 
 Status: ready-for-dev
@@ -64,10 +70,10 @@ from src.mcp.server import mcp
 def ping() -> dict:
     """
     Health check tool to verify MCP server is running.
-    
+
     Returns a status object indicating the server is operational.
     This tool can be used by MCP clients to verify connectivity.
-    
+
     Returns:
         dict: Status object with 'status' and 'message' fields
     """
